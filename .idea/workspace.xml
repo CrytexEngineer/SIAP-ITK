@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="" />
+    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +27,7 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/SIAP-ITK" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -119,7 +132,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -159,7 +172,10 @@
       <workItem from="1582179757287" duration="366000" />
       <workItem from="1582180150813" duration="9120000" />
       <workItem from="1582270657142" duration="618000" />
-      <workItem from="1582271298670" duration="6517000" />
+      <workItem from="1582271298670" duration="6818000" />
+      <workItem from="1582510952431" duration="128000" />
+      <workItem from="1582511109400" duration="946000" />
+      <workItem from="1582530890875" duration="1217000" />
     </task>
     <servers />
   </component>
@@ -195,14 +211,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582029972514" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1582273185260">
+    <state x="184" y="6" key="SettingsEditor" timestamp="1582511136351">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582273185260" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582271298541">
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582511136351" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582530914318">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582271298541" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582530914318" />
     <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582190048201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

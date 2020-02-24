@@ -19,41 +19,41 @@ class Observer
             return redirect()->route('login');
         }
 
-        if (Auth::user()->role == 0) {
+        if (Auth::user()->role == 1) {
             return redirect()->route('superadmin');
         }
 
-        if (Auth::user()->role == 1) {
+        if (Auth::user()->role == 2) {
             return redirect()->route('admin');
         }
 
-        if (Auth::user()->role == 2) {
+        if (Auth::user()->role == 3) {
             return $next($request);
         }
 
-        if (Auth::user()->role == 3) {
+        if (Auth::user()->role == 4) {
             return redirect()->route('warek');
         }
 
-        if (Auth::user()->role == 4) {
+        if (Auth::user()->role == 5) {
             return redirect()->route('kajur');
         }
 
 
-        if (Auth::user()->role == 5) {
+        if (Auth::user()->role == 6) {
             return redirect()->route('kaprodi');
         }
 
-        if (Auth::user()->role == 6) {
+        if (Auth::user()->role == 7) {
             return redirect()->route('dikjur');
         }
 
-        if (Auth::user()->role == 7) {
+        if (Auth::user()->role == 8) {
             return redirect()->route('diksat');
         }
 
 
-        if (Auth::user()->role == 8) {
+        if (Auth::user()->role == 9) {
             return redirect()->route('dosen');
         }
     }
