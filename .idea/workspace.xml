@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -175,12 +175,23 @@
       <workItem from="1582271298670" duration="6818000" />
       <workItem from="1582510952431" duration="128000" />
       <workItem from="1582511109400" duration="946000" />
-      <workItem from="1582530890875" duration="1217000" />
+      <workItem from="1582530890875" duration="4737000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Live_Templates" timestamp="1582274428955">
@@ -195,6 +206,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582189847072" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582536252326">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536252325" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582535938762">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582535938762" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1582029972515">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -211,10 +230,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582029972514" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1582511136351">
+    <state x="184" y="6" key="SettingsEditor" timestamp="1582536176852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582511136351" />
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582536176852" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582530914318">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

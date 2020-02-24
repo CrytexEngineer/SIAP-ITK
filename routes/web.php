@@ -19,6 +19,7 @@ Route::get('/home','HomeController@index');
 
 Auth::routes();
 
+//Route::get('/login','LoginController');
 Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin')->middleware('superadmin');
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/observer', 'ObserverController@index')->name('observer')->middleware('observer');
