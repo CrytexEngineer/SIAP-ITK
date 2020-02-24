@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,8 +162,16 @@
       <workItem from="1582271298670" duration="6818000" />
       <workItem from="1582510952431" duration="128000" />
       <workItem from="1582511109400" duration="946000" />
-      <workItem from="1582530890875" duration="4737000" />
+      <workItem from="1582530890875" duration="5046000" />
     </task>
+    <task id="LOCAL-00001" summary="Update AUTH">
+      <created>1582536280368</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582536280368</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +187,25 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update AUTH" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update AUTH" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="0" key="#Live_Templates" timestamp="1582274428955">
@@ -206,10 +220,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582189847072" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582536279193">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582536411741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536279193" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536411741" />
     <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582535938762">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
