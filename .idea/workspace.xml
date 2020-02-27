@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/$data['email']" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/$data['name']" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/phpunit_xml.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/['name']" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Employee.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Student.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_24_135949_role_user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_25_065545_create_students_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_25_065807_create_employees_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/get()" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dikjur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Diksat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Dosen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kajur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Kaprodi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Observer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/SuperAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthUserRole/Warek.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +173,7 @@
       <workItem from="1582694239760" duration="6338000" />
       <workItem from="1582767834897" duration="753000" />
       <workItem from="1582774279039" duration="1696000" />
+      <workItem from="1582783689509" duration="160000" />
     </task>
     <task id="LOCAL-00001" summary="Update AUTH">
       <created>1582536280368</created>
@@ -307,10 +285,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582549934734" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582774280026">
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582783692704">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582774280026" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582783692704" />
     <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582616088315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
