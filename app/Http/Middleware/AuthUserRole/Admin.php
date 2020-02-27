@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Auth;
 class Admin
 {
     /**
@@ -16,45 +16,49 @@ class Admin
     public function handle($request, Closure $next)
     {
 
+        if (Auth::user()->role == 0) {
+            return redirect()->route('home');
+        }
+
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
-        if (Auth::user()->role == 0) {
+        if (Auth::user()->role == 1) {
             return redirect()->route('superadmin');
         }
 
-        if (Auth::user()->role == 1) {
+        if (Auth::user()->role == 2) {
             return $next($request);
         }
 
-        if (Auth::user()->role == 2) {
+        if (Auth::user()->role == 3) {
             return redirect()->route('observer');
         }
 
-        if (Auth::user()->role == 3) {
+        if (Auth::user()->role == 4) {
             return redirect()->route('warek');
         }
 
-        if (Auth::user()->role == 4) {
+        if (Auth::user()->role == 5) {
             return redirect()->route('kajur');
         }
 
 
-        if (Auth::user()->role == 5) {
+        if (Auth::user()->role == 6) {
             return redirect()->route('kaprodi');
         }
 
-        if (Auth::user()->role == 6) {
+        if (Auth::user()->role == 7) {
             return redirect()->route('dikjur');
         }
 
-        if (Auth::user()->role == 7) {
+        if (Auth::user()->role == 8) {
             return redirect()->route('diksat');
         }
 
 
-        if (Auth::user()->role == 8) {
+        if (Auth::user()->role == 9) {
             return redirect()->route('dosen');
         }
 

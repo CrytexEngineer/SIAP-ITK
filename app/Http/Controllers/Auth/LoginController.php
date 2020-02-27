@@ -32,52 +32,52 @@ class LoginController extends Controller
     {
         switch (Auth::user()->role) {
 
-            case 0:
+            case 1:
                 $this->redirectTo = '/superadmin';
                 return $this->redirectTo;
                 break;
-            case 1:
+            case 2:
                 $this->redirectTo = '/admin';
                 return $this->redirectTo;
                 break;
-            case 2:
+            case 3:
                 $this->redirectTo = '/observer';
                 return $this->redirectTo;
                 break;
-            case 3:
+            case 4:
                 $this->redirectTo = '/warek';
                 return $this->redirectTo;
                 break;
-            case 4:
+            case 5:
                 $this->redirectTo = '/kajur';
                 return $this->redirectTo;
                 break;
-            case 5:
+            case 6:
                 $this->redirectTo = '/kaprodi';
                 return $this->redirectTo;
                 break;
 
-            case 6:
+            case 7:
                 $this->redirectTo = '/dikjur';
                 return $this->redirectTo;
                 break;
 
-            case 7:
+            case 8:
                 $this->redirectTo = '/diksat';
                 return $this->redirectTo;
                 break;
 
-            case 8:
+            case 9:
                 $this->redirectTo = '/dosen';
                 return $this->redirectTo;
                 break;
 
             default:
-                $this->redirectTo = '/superadmin';
+                $this->redirectTo = '/login';
                 return $this->redirectTo;
         }
 
-        dd($this->redirectTo);
+
 
     }
 

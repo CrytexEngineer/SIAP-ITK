@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Employee;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\Student;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -44,30 +46,65 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nip' => ['required', 'integer', 'unique:employees'],
+            'role' => ['required', 'integer']
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'role' => $data['role'],
             'password' => Hash::make($data['password']),
+        ]);
+
+        if ($data['role'] != 10 && ($data['role'] >= 1 && $data['role'] <= 6 || $data['role'] == 9)) {
+
+            return Employee::create([
+                'PE_Nip' => $data['nip'],
+                'PE_Nama' => $data['name'],
+                'PE_NamaLengkap' => $data['name'],
+                'PE_Email' => $data['email'],
+                'PE_TipePegawai' => 0
+            ]);
+        }
+
+        if ($data['role'] == 7 || $data['role'] == 8) {
+
+            return Employee::create([
+                'PE_Nip' => $data['nip'],
+                'PE_Nama' => $data['name'],
+                'PE_NamaLengkap' => $data['name'],
+                'PE_Email' => $data['email'],
+                'PE_TipePegawai' => 1
+            ]);
+        }
+
+
+        return Student::create([
+            'MA_Nrp' => $data['nrp'],
+            'MA_NRP_Baru' => $data['nrp'],
+            'MA_NamaLengkap' => $data['name'],
+            'MA_Email' => $data['email']
         ]);
     }
 }

@@ -73,6 +73,7 @@ class Kernel extends HttpKernel
         'kaprodi' => \App\Http\Middleware\Kaprodi::class,
         'dosen' => \App\Http\Middleware\Dosen::class,
         'student' => \App\Http\Middleware\Student::class,
+        'home' => \App\Http\Middleware\Home::class,
 
         ];
 

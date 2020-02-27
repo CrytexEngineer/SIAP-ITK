@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home','HomeController@index');
+
 
 Auth::routes();
 
+Route::get('/home','HomeController@index')->name('home')->middleware('home');
 Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin')->middleware('superadmin');
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/observer', 'ObserverController@index')->name('observer')->middleware('observer');
