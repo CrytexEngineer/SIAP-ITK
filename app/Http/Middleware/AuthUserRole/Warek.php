@@ -19,6 +19,10 @@ class Warek
             return redirect()->route('login');
         }
 
+        if (Auth::user()->role == 0) {
+            return redirect()->route('home');
+        }
+
         if (Auth::user()->role == 1) {
             return redirect()->route('superadmin');
         }
