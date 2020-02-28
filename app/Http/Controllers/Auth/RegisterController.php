@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Employee;
 use App\Http\Controllers\Controller;
-use App\Http\Middleware\Student;
 use App\Providers\RouteServiceProvider;
+use App\Role;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -55,8 +55,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'nip' => ['required', 'integer', 'unique:employees'],
-            'role' => ['required', 'integer']
+            /**  'nip' => ['required', 'integer', 'unique:employees'],
+             * 'role' => ['required', 'integer']**/
         ]);
     }
 
@@ -68,43 +68,55 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        User::create([
+        $data['role'] = "1";
+        $data['nip'] = "00";
+        $user = [
             'name' => $data['name'],
             'email' => $data['email'],
             'role' => $data['role'],
             'password' => Hash::make($data['password']),
-        ]);
+        ];
 
-        if ($data['role'] != 10 && ($data['role'] >= 1 && $data['role'] <= 6 || $data['role'] == 9)) {
+        $employee = [];
+        if ($data['role'] != 10) {
+            if ($data['role'] >= 1 && $data['role'] <= 6 || $data['role'] == 9) {
 
-            return Employee::create([
-                'PE_Nip' => $data['nip'],
-                'PE_Nama' => $data['name'],
-                'PE_NamaLengkap' => $data['name'],
-                'PE_Email' => $data['email'],
-                'PE_TipePegawai' => 0
-            ]);
+                $employee = New Employee([
+                    'PE_Nip' => $data['nip'],
+                    'PE_Nama' => $data['name'],
+                    'PE_NamaLengkap' => $data['name'],
+                    'PE_Email' => $data['email'],
+                    'PE_TipePegawai' => 0
+                ]);
+            }
+
+            if ($data['role'] == 7 || $data['role'] == 8) {
+                $this->$employee = New Employee([
+                    'PE_Nip' => $data['nip'],
+                    'PE_Nama' => $data['name'],
+                    'PE_NamaLengkap' => $data['name'],
+                    'PE_Email' => $data['email'],
+                    'PE_TipePegawai' => 1
+                ]);
+            }
+
+
+            if ($employee->save()) {
+                $role = Role::find($data['role'])->get()->first();
+                $role->users()->attach($user);
+            }
+            return User::create($user);
         }
-
-        if ($data['role'] == 7 || $data['role'] == 8) {
-
-            return Employee::create([
-                'PE_Nip' => $data['nip'],
-                'PE_Nama' => $data['name'],
-                'PE_NamaLengkap' => $data['name'],
-                'PE_Email' => $data['email'],
-                'PE_TipePegawai' => 1
-            ]);
-        }
-
-        TES
-
-        return Student::create([
+        $student = [
             'MA_Nrp' => $data['nrp'],
             'MA_NRP_Baru' => $data['nrp'],
             'MA_NamaLengkap' => $data['name'],
             'MA_Email' => $data['email']
-        ]);
+        ];
+        if ($student->save()) {
+            $role = Role::find($data['role'])->get()->first();
+            $role->users()->attach($user);
+        }
+        return User::create($user);
     }
 }

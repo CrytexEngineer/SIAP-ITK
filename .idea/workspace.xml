@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/get()" afterDir="false" />
+    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +173,8 @@
       <workItem from="1582694239760" duration="6338000" />
       <workItem from="1582767834897" duration="753000" />
       <workItem from="1582774279039" duration="1696000" />
-      <workItem from="1582783689509" duration="160000" />
+      <workItem from="1582783689509" duration="1793000" />
+      <workItem from="1582785603087" duration="4175000" />
     </task>
     <task id="LOCAL-00001" summary="Update AUTH">
       <created>1582536280368</created>
@@ -257,30 +258,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="367" y="18" width="645" height="691" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1582700070659" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582536688954">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582784969698">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536688954" />
-    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582552856951">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582784969698" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582784321458">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582552856951" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1582700424968">
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582784321458" />
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1582786898589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582700424968" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1582700424968">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582786898589" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1582786898589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582700424968" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1582700424968">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582786898589" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1582786898589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582700424968" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1582700424968">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582786898589" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1582786898589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582700424968" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582786898589" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1582549934734">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -293,9 +294,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1582616088315" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582274396220">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582786501988">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582274396220" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582786501988" />
   </component>
 </project>
