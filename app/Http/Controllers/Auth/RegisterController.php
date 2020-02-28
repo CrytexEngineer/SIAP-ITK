@@ -98,8 +98,6 @@ class RegisterController extends Controller
             ]);
         }
 
-        TES
-
         return Student::create([
             'MA_Nrp' => $data['nrp'],
             'MA_NRP_Baru' => $data['nrp'],
