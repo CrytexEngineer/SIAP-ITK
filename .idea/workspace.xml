@@ -4,10 +4,6 @@
 <<<<<<< Updated upstream
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-
     </list>
 =======
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH" />
@@ -252,6 +248,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1582035265618" />
+    <state x="432" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582883665380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="432" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1582883665380" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582614174334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -296,10 +296,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582783692704" />
-    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582616088315">
+    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582884102088">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1582616088315" />
+    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1582884102088" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582786501988">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
