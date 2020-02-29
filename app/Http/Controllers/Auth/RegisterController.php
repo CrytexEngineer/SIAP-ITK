@@ -68,8 +68,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['role'] = "1";
-        $data['nip'] = "00";
+        $data['role'] = "7";
+        $data['nip'] = strval(random_int(1000, 2000));
         $user = [
             'name' => $data['name'],
             'email' => $data['email'],
@@ -91,7 +91,7 @@ class RegisterController extends Controller
             }
 
             if ($data['role'] == 7 || $data['role'] == 8) {
-                $this->$employee = New Employee([
+                $employee = New Employee([
                     'PE_Nip' => $data['nip'],
                     'PE_Nama' => $data['name'],
                     'PE_NamaLengkap' => $data['name'],
@@ -102,10 +102,12 @@ class RegisterController extends Controller
 
 
             if ($employee->save()) {
+                User::create($user);
+                $user =User::where('email',$data['email'])->first();
                 $role = Role::find($data['role'])->get()->first();
-                $role->users()->attach($user);
+                $user->roles()->attach($role);
             }
-            return User::create($user);
+            return $user;
         }
         $student = [
             'MA_Nrp' => $data['nrp'],
@@ -114,9 +116,16 @@ class RegisterController extends Controller
             'MA_Email' => $data['email']
         ];
         if ($student->save()) {
+            User::create($user);
+            $user =User::where('email',$data['email'])->first();
             $role = Role::find($data['role'])->get()->first();
-            $role->users()->attach($user);
+            $user->roles()->attach($role);
         }
         return User::create($user);
+    }
+
+    public function showRegistrationFormMa()
+    {
+        return view('auth.register');
     }
 }
