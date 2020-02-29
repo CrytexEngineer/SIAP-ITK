@@ -128,13 +128,13 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
-    public function showRegistrationFormMahasiswa()
-    {
-        return view('register.mahasiswa');
-    }
-
-    public function showRegistrationFormPegawai()
-    {
-        return view('register.pegawai');
-    }
+//    public function showRegistrationFormMahasiswa()
+//    {
+//        return view('register.mahasiswa');
+//    }
+//
+//    public function showRegistrationFormPegawai()
+//    {
+//        return view('register.pegawai');
+//    }
 }
