@@ -10,7 +10,7 @@ class ManajemenAkunMahasiswaController extends Controller
 
     function json(){
         return Datatables::of(ManajemenAkunMahasiswa::all())->make(true);
-    }
+}
     /**
      * Display a listing of the resource.
      *

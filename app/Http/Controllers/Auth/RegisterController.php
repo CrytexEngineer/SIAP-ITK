@@ -105,4 +105,13 @@ class RegisterController extends Controller
             'MA_Email' => $data['email']
         ]);
     }
+    public function showRegistrationFormMahasiswa()
+    {
+        return view('register.mahasiswa');
+    }
+
+    public function showRegistrationFormPegawai()
+    {
+        return view('register.pegawai');
+    }
 }

@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunMahasiswaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunPegawaiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ManajemenAkunMahasiswa.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ManajemenAkunPegawai.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/manajemen_akun_mahasiswa/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/manajemen_akun_pegawai/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SIAP_ITK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SIAP_ITK.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/register/mahasiswa.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/register/pegawai.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunMahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunMahasiswaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +185,8 @@
       <workItem from="1582774279039" duration="1696000" />
       <workItem from="1582783689509" duration="160000" />
       <workItem from="1582786816744" duration="1864000" />
-      <workItem from="1582847741128" duration="9431000" />
+      <workItem from="1582847741128" duration="10031000" />
+      <workItem from="1582942082971" duration="3473000" />
     </task>
     <task id="LOCAL-00001" summary="Update AUTH">
       <created>1582536280368</created>
@@ -285,10 +276,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536688954" />
-    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582847903100">
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582944404745">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582847903100" />
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582944404745" />
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582552856951" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1582813928479">
       <screen x="0" y="0" width="1366" height="728" />
