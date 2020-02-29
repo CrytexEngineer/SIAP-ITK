@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Middleware\Student;
 use DataTables;
 use Illuminate\Http\Request;
 use App\ManajemenAkunMahasiswa;
@@ -10,19 +9,13 @@ class ManajemenAkunMahasiswaController extends Controller
 {
 
     function json(){
-        return Datatables::of($this->showAll())->make(true);
-    }
+        return Datatables::of(ManajemenAkunMahasiswa::all())->make(true);
+}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function showAll()
-    {
-        return \App\Student::all();
-    }
-
     public function index()
     {
         return view('manajemen_akun_mahasiswa.index');
