@@ -68,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['role'] = "7";
+        $data['role'] = "6";
         $data['nip'] = strval(random_int(1000, 2000));
         $user = [
             'name' => $data['name'],
@@ -104,9 +104,10 @@ class RegisterController extends Controller
             if ($employee->save()) {
                 User::create($user);
                 $user =User::where('email',$data['email'])->first();
-                $role = Role::find($data['role'])->get()->first();
+                $role = Role::where('id',$data['role'])->get()->first();
                 $user->roles()->attach($role);
             }
+            dd($user);
             return $user;
         }
         $student = [
@@ -118,14 +119,11 @@ class RegisterController extends Controller
         if ($student->save()) {
             User::create($user);
             $user =User::where('email',$data['email'])->first();
-            $role = Role::find($data['role'])->get()->first();
-            $user->roles()->attach($role);
+            $role = Role::where('id',$data['role'])->get()->first();
+            $user->roles()->attach($role['id']);
         }
         return User::create($user);
     }
 
-    public function showRegistrationFormMa()
-    {
-        return view('auth.register');
-    }
+
 }
