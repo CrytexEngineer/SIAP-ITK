@@ -22,10 +22,6 @@ Auth::routes();
 Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController@json');
 Route::get('/akunpegawai/json','ManajemenAkunPegawaiController@json');
 
-Route::get('/register_mahasiswa', 'RegisterController@showRegistrationFormMahasiswa');
-Route::get('/register_pegawai', 'RegisterController@showRegistrationFormPegawai');
-
-
 Route::get('/home','HomeController@index')->name('home')->middleware('home');
 Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin')->middleware('superadmin');
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
