@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/register/mahasiswa.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/register/pegawai.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunMahasiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManajemenAkunMahasiswaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
 <<<<<<< Updated upstream
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> master
     </list>
 =======
     <list default="true" id="6503ca3e-34cd-4f5f-9216-8da38316a428" name="Default Changelist" comment="Update AUTH" />
@@ -175,8 +185,15 @@
       <workItem from="1582694239760" duration="6338000" />
       <workItem from="1582767834897" duration="753000" />
       <workItem from="1582774279039" duration="1696000" />
+<<<<<<< HEAD
+      <workItem from="1582783689509" duration="160000" />
+      <workItem from="1582786816744" duration="1864000" />
+      <workItem from="1582847741128" duration="10031000" />
+      <workItem from="1582942082971" duration="3473000" />
+=======
       <workItem from="1582783689509" duration="1793000" />
       <workItem from="1582785603087" duration="4175000" />
+>>>>>>> master
     </task>
     <task id="LOCAL-00001" summary="Update AUTH">
       <created>1582536280368</created>
@@ -267,12 +284,22 @@
     <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582784969698">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582536688954" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582944404745">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582944404745" />
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582552856951" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1582813928479">
+=======
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582784969698" />
     <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1582784321458">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582784321458" />
     <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1582786898589">
+>>>>>>> master
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582786898589" />
