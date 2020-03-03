@@ -19,7 +19,6 @@ class CreateStudentsTable extends Migration
             $table->integer('MA_NRP_Baru')->unsigned()->unique();
             $table->String('MA_NamaLengkap');
             $table->String('MA_Email')->unique();
-            $table->foreign('MA_Email')->references('email')->on('users')->onCascade('delete');
             $table->timestamps();
         });
     }

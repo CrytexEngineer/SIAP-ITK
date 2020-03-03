@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use DataTables;
 use Illuminate\Http\Request;
 use App\ManajemenAkunMahasiswa;
@@ -61,7 +62,9 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user= User::find($id);
+        return View::make("user/regprofile")->with($user);
+
     }
 
     /**

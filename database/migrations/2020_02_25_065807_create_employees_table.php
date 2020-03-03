@@ -20,7 +20,6 @@ class CreateEmployeesTable extends Migration
             $table->String('PE_NamaLengkap');
             $table->String('PE_Nama');
             $table->integer('PE_TipePegawai')->unsigned();
-            $table->foreign('PE_Email')->references('email')->on('users')->onCascade('delete');
             $table->timestamps();
         });
     }

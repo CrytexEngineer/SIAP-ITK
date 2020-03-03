@@ -15,9 +15,9 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">NIP</label>
 
                                 <div class="col-md-6">
-                                    <input id="nip" type="text" class="form-control @error('nip') is-invalid @enderror" name="nip" value="{{ old('nip') }}" required autocomplete="nip" autofocus>
+                                    <input id="PE_Nip" type="text" class="form-control @error('PE_Nip') is-invalid @enderror" name="PE_Nip" value="{{ old('PE_Nip') }}" required autocomplete="PE_Nip" autofocus>
 
-                                    @error('nip')
+                                    @error('PE_Nip')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
