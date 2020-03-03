@@ -1,16 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use DataTables;
-use Illuminate\Http\Request;
-use App\ManajemenAkunPegawai;
-class ManajemenAkunPegawaiController extends Controller
-{
 
-    function json(){
-        return Datatables::of(ManajemenAkunPegawai::all())->make(true);
-    }
+use Illuminate\Http\Request;
+
+class RegisterMahasiswaController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +13,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function index()
     {
-        return view('manajemen_akun_pegawai.index');
+        return view('register.mahasiswa');
     }
 
     /**
