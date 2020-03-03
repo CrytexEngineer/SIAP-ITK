@@ -45,10 +45,10 @@ class User extends Authenticatable
     }
 
     public function student(){
-        return$this->belongsTo(Student::Class);
+        return$this->belongsTo(Student::Class,'email','MA_Email');
     }
 
     public function employee(){
-        return$this->belongsTo(Employee::Class);
+        return$this->belongsTo(Employee::Class,'email','PE_Email');
     }
 }

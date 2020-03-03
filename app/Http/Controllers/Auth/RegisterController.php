@@ -6,6 +6,7 @@ use App\Employee;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Role;
+use App\Student;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -25,6 +26,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
 
     /**
      * Where to redirect users after registration.
@@ -51,12 +53,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            /**  'nip' => ['required', 'integer', 'unique:employees'],
-             * 'role' => ['required', 'integer']**/
+            'PE_Nip' => ['required', 'integer', 'unique:employees'],
+            'role' => ['required', 'integer']
         ]);
     }
 
@@ -68,8 +71,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['role'] = "6";
-        $data['nip'] = strval(random_int(1000, 2000));
+
         $user = [
             'name' => $data['name'],
             'email' => $data['email'],
@@ -82,7 +84,7 @@ class RegisterController extends Controller
             if ($data['role'] >= 1 && $data['role'] <= 6 || $data['role'] == 9) {
 
                 $employee = New Employee([
-                    'PE_Nip' => $data['nip'],
+                    'PE_Nip' => $data['PE_Nip'],
                     'PE_Nama' => $data['name'],
                     'PE_NamaLengkap' => $data['name'],
                     'PE_Email' => $data['email'],
@@ -92,7 +94,7 @@ class RegisterController extends Controller
 
             if ($data['role'] == 7 || $data['role'] == 8) {
                 $employee = New Employee([
-                    'PE_Nip' => $data['nip'],
+                    'PE_Nip' => $data['PE_Nip'],
                     'PE_Nama' => $data['name'],
                     'PE_NamaLengkap' => $data['name'],
                     'PE_Email' => $data['email'],
@@ -102,29 +104,33 @@ class RegisterController extends Controller
 
 
             if ($employee->save()) {
+
                 User::create($user);
-                $user =User::where('email',$data['email'])->first();
-                $role = Role::where('id',$data['role'])->get()->first();
+                $user = User::where('email', $data['email'])->first();
+                $role = Role::where('id', $data['role'])->get()->first();
                 $user->roles()->attach($role);
             }
-            dd($user);
+
             return $user;
         }
-        $student = [
-            'MA_Nrp' => $data['nrp'],
-            'MA_NRP_Baru' => $data['nrp'],
+        $student = new Student([
+            'MA_Nrp' => $data['PE_Nip'],
+            'MA_NRP_Baru' => $data['PE_Nip'],
             'MA_NamaLengkap' => $data['name'],
             'MA_Email' => $data['email']
-        ];
+        ]);
         if ($student->save()) {
             User::create($user);
-            $user =User::where('email',$data['email'])->first();
-            $role = Role::where('id',$data['role'])->get()->first();
-            $user->roles()->attach($role['id']);
+            $user = User::where('email', $data['email'])->first();
+            $role = Role::where('id', $data['role'])->get()->first();
+            $user->roles()->attach($role);
         }
-        return User::create($user);
+        return $user;
     }
 
-
+    public function showRegistrationFormMahasiswa()
+    {
+        return view('auth.register');
+    }
 
 }
