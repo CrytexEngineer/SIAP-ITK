@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Manajemen Akun Mahasiswa')
+@section('title', 'Manajemen Akun Pegawai')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -14,17 +14,17 @@
                             </div>
                         @endif
 
-                            <table class="table table-bordered" id="users-table">
-                                <thead>
-                                <tr>
-                                    <th>NIM</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>E-mail</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
-                                </tr>
-                                </thead>
-                            </table>
+                        <table class="table table-bordered" id="users-table">
+                            <thead>
+                            <tr>
+                                <th>Nama Lengkap</th>
+                                <th>E-mail</th>
+                                <th>Role</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
+                            </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -38,11 +38,11 @@
             $('#users-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '/akunmahasiswa/json',
+                ajax: '/akunpegawai/json',
                 columns: [
-                    { data: 'MA_Nrp', name: 'MA_Nrp' },
-                    { data: 'MA_NamaLengkap', name: 'MA_NamaLengkap' },
-                    { data: 'MA_Email', name: 'MA_Email' },
+                    { data: 'name', name: 'name' },
+                    { data: 'email', name: 'email' },
+                    { data: 'role', name: 'role' },
                     { data: 'created_at', name: 'created_at' },
                     { data: 'updated_at', name: 'updated_at' }
                 ]

@@ -1,26 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use DataTables;
+
 use Illuminate\Http\Request;
-use App\ManajemenAkun;
 
-class ManajemenAkunMahasiswaController extends Controller
+class RegisterPegawaiController extends Controller
 {
-
-    function json(){
-        return Datatables::of(User::where('role', 10)->get()->all())
-            ->addColumn('action', function ($row) {
-                $action = '<a href="/akunmahasiswa/'.$row->email.'/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
-                $action .= \Form::open(['url'=>'akunmahasiswa/'.$row->email,'method'=>'delete', 'style'=>'float:right']);
-                $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
-                $action .= \Form::close();
-                return $action;
-
-            })
-            ->make(true);
-}
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +13,7 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function index()
     {
-        return view('manajemen_akun.mahasiswa');
+        return view('register.pegawai');
     }
 
     /**
@@ -71,11 +56,7 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $data['users'] = User::where('email', $id)->first();
-        return view('manajemen_akun.edit_mahasiswa',$data);
-//        $user= User::find($id);
-//        return View::make("user/regprofile")->with($user);
-
+        //
     }
 
     /**
@@ -87,9 +68,7 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $akunmahasiswa = ManajemenAkun::where('email',$id);
-//        $akunmahasiswa->update($request->except(['_token','_method']));
-        return redirect('/akunmahasiswa');
+        //
     }
 
     /**
@@ -100,8 +79,6 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        $akunmahasiswa = ManajemenAkun::where('email',$id);
-        $akunmahasiswa->delete();
-        return redirect('/akunmahasiswa');
+        //
     }
 }
