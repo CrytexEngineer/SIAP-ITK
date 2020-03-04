@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController@json');
+Route::get('/akunmahasiswa/json','ManajemenAkunPenggunaController@json');
 Route::get('/akunpegawai','RegisterController@showRegistrationFormMahasiswa');
 
 Route::get('/home','HomeController@index')->name('home')->middleware('home');
@@ -33,7 +33,6 @@ Route::get('/kaprodi', 'KaprodiController@index')->name('kaprodi')->middleware('
 Route::get('/dikjur', 'DikjurController@index')->name('dikjur')->middleware('dikjur');
 Route::get('/diksat', 'DiksatController@index')->name('diksat')->middleware('diksat');
 Route::get('/dosen', 'DosenController@index')->name('dosen')->middleware('dosen');
-
-Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
-Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
+Route::resource('/akunmahasiswa', 'ManajemenAkunPenggunaController');
+Route::resource('/akunpegawai', 'ManajemenAkunPenggunaController');
 
