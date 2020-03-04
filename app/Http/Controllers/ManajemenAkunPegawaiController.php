@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 use App\User;
 use DataTables;
 use Illuminate\Http\Request;
-use App\ManajemenAkunPegawai;
+use App\ManajemenAkun;
 class ManajemenAkunPegawaiController extends Controller
 {
 
     function json(){
-        return Datatables::of(ManajemenAkunPegawai::all())->make(true);
+        return Datatables::of(User::where('role', '<', 10)->get()->all())->make(true);
+        //Khusus di pegawai harus query ke roles selain mahasiswa
     }
     /**
      * Display a listing of the resource.
@@ -18,7 +19,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function index()
     {
-        return view('manajemen_akun_pegawai.index');
+        return view('manajemen_akun.pegawai');
     }
 
     /**

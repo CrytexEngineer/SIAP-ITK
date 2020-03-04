@@ -17,9 +17,9 @@
                         <table class="table table-bordered" id="users-table">
                             <thead>
                             <tr>
-                                <th>NIP</th>
                                 <th>Nama Lengkap</th>
                                 <th>E-mail</th>
+                                <th>Role</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                             </tr>
@@ -40,9 +40,9 @@
                 serverSide: true,
                 ajax: '/akunpegawai/json',
                 columns: [
-                    { data: 'PE_Nip', name: 'PE_Nip' },
-                    { data: 'PE_NamaLengkap', name: 'PE_NamaLengkap' },
-                    { data: 'PE_Email', name: 'MA_Email' },
+                    { data: 'name', name: 'name' },
+                    { data: 'email', name: 'email' },
+                    { data: 'role', name: 'role' },
                     { data: 'created_at', name: 'created_at' },
                     { data: 'updated_at', name: 'updated_at' }
                 ]
