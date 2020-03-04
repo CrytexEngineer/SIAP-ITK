@@ -87,6 +87,7 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $akunmahasiswa = User::where('email',$id);
         $akunmahasiswa->update($request->except(['_token','_method']));
         return redirect('/akunmahasiswa')->with('status', 'Data Berhasil Diubah');

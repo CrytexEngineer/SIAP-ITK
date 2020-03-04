@@ -22,7 +22,7 @@ class ManajemenAkunPenggunaController extends Controller
 
     public function index()
     {
-        //
+
     }
 
     public function indexUserPegawai()
