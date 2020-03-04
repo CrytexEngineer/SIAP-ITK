@@ -9,7 +9,16 @@ class ManajemenAkunPegawaiController extends Controller
 {
 
     function json(){
-        return Datatables::of(User::where('role', '<', 10)->get()->all())->make(true);
+        return Datatables::of(User::where('role', '<', 10)->get()->all())
+            ->addColumn('action', function ($row) {
+            $action = '<a href="/akunpegawai/'.$row->email.'/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            $action .= \Form::open(['url'=>'akunpegawai/'.$row->email,'method'=>'delete', 'style'=>'float:right']);
+            $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
+            $action .= \Form::close();
+            return $action;
+
+        })
+            ->make(true);
         //Khusus di pegawai harus query ke roles selain mahasiswa
     }
     /**
@@ -62,7 +71,11 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['users'] = User::where('email', $id)->first();
+        return view('manajemen_akun.edit_pegawai',$data);
+//        $user= User::find($id);
+//        return View::make("user/regprofile")->with($user);
+
     }
 
     /**
@@ -74,7 +87,9 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $akunpegawai = User::where('email',$id);
+        $akunpegawai->update($request->except(['_token','_method']));
+        return redirect('/akunpegawai')->with('status', 'Data Berhasil Diubah');
     }
 
     /**
@@ -85,6 +100,9 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $akunpegawai = User::where('email',$id);
+        $akunpegawai->delete();
+        return redirect('/akunpegawai')->with('status_failed', 'Data Berhasil Dihapus');
     }
 }
+

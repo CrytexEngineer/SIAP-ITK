@@ -87,9 +87,9 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $akunmahasiswa = ManajemenAkun::where('email',$id);
-//        $akunmahasiswa->update($request->except(['_token','_method']));
-        return redirect('/akunmahasiswa');
+        $akunmahasiswa = User::where('email',$id);
+        $akunmahasiswa->update($request->except(['_token','_method']));
+        return redirect('/akunmahasiswa')->with('status', 'Data Berhasil Diubah');
     }
 
     /**
@@ -100,8 +100,8 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        $akunmahasiswa = ManajemenAkun::where('email',$id);
+        $akunmahasiswa = User::where('email',$id);
         $akunmahasiswa->delete();
-        return redirect('/akunmahasiswa');
+        return redirect('/akunmahasiswa')->with('status_failed', 'Data Berhasil Dihapus');
     }
 }
