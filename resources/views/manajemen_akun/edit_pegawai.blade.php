@@ -25,6 +25,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label text-md-right">Role</label>
+                            <div class="col-md-4">
+                                {{Form::select('role', ['1' => 'SuperAdmin', '2' => 'Admin', '3' =>'Observer', '4'=>'Wakil Rektor',
+                                  '5'=>'Tendik Jurusan', '6'=>'Tendik Pusat', '7'=>'Ketua Prodi','8'=>'Kepala Jurusan','9'=>'Dosen Pengampu'])}}
+{{--                                {{ Form::text('email', null, ['class'=>'form-control', 'placeholder'=> 'E-Mail Pegawai']) }}--}}
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-2">
                                 {{Form::submit('Simpan Data', ['class'=>'btn btn-primary'])}}
