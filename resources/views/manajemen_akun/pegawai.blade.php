@@ -14,14 +14,20 @@
                             </div>
                         @endif
 
+                        @if (session('status_failed'))
+                            <div class="alert alert-danger" role="alert">
+                            {{ session('status_failed') }}
+                            </div>
+                        @endif
+
                         <table class="table table-bordered" id="users-table">
                             <thead>
                             <tr>
                                 <th>Nama Lengkap</th>
                                 <th>E-mail</th>
-                                <th>Role</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
+                                <th width="85">Action</th>
                             </tr>
                             </thead>
                         </table>
@@ -42,9 +48,9 @@
                 columns: [
                     { data: 'name', name: 'name' },
                     { data: 'email', name: 'email' },
-                    { data: 'role', name: 'role' },
                     { data: 'created_at', name: 'created_at' },
-                    { data: 'updated_at', name: 'updated_at' }
+                    { data: 'updated_at', name: 'updated_at' },
+                    { data: 'action', name: 'action' }
                 ]
             });
         });

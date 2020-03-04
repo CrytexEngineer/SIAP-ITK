@@ -14,6 +14,12 @@
                             </div>
                         @endif
 
+                            @if (session('status_failed'))
+                                <div class="alert alert-danger" role="alert">
+                                    {{ session('status_failed') }}
+                                </div>
+                            @endif
+
                         <table class="table table-bordered" id="users-table">
                             <thead>
                             <tr>
