@@ -21,6 +21,9 @@
                             </div>
                         @endif
 
+                        <a href="/manajemen_akun/pegawai/create" class="btn btn-success">Input Data Baru</a>
+                        <hr>
+
                         <table class="table table-bordered" id="users-table">
                             <thead>
                             <tr>
@@ -48,7 +51,7 @@
             $('#users-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '/akunpegawai/json',
+                ajax: '/manajemen_akun/pegawai/json',
                 columns: [
                     { data: 'name', name: 'name' },
                     { data: 'email', name: 'email' },

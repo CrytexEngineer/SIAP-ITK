@@ -14,11 +14,14 @@
                             </div>
                         @endif
 
-                            @if (session('status_failed'))
-                                <div class="alert alert-danger" role="alert">
-                                    {{ session('status_failed') }}
-                                </div>
-                            @endif
+                        @if (session('status_failed'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('status_failed') }}
+                            </div>
+                        @endif
+
+                        <a href="/manajemen_akun/mahasiswa/create" class="btn btn-success">Input Data Baru</a>
+                            <hr>
 
                         <table class="table table-bordered" id="users-table">
                             <thead>
@@ -44,7 +47,7 @@
             $('#users-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '/akunmahasiswa/json',
+                ajax: '/manajemen_akun/mahasiswa/json',
                 columns: [
                     { data: 'name', name: 'name' },
                     { data: 'email', name: 'email' },
