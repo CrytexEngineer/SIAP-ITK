@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'PE_Nip' => ['required', 'integer', 'unique:employees'],
-            'role' => ['required', 'integer']
+           // 'role' => ['required', 'integer']
         ]);
     }
 
@@ -74,7 +74,7 @@ class RegisterController extends Controller
         $user = [
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $data['role'],
+           //'role' => $data['role'],
             'password' => Hash::make($data['password']),
         ];
 
@@ -127,9 +127,6 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function showRegistrationFormMahasiswa()
-    {
-        return view('auth.register');
-    }
+
 
 }
