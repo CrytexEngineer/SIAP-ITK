@@ -12,12 +12,26 @@
                             @csrf
 
                             <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">NIM</label>
+
+                                <div class="col-md-6">
+                                    <input id="MA_Nrp" type="text" class="form-control @error('MA_Nrp') is-invalid @enderror" name="MA_Nrp" value="{{ old('MA_Nrp') }}" required autocomplete="MA_Nrp" autofocus>
+
+                                    @error('MA_Nrp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="MA_NamaLengkap" type="text" class="form-control @error('MA_NamaLengkap') is-invalid @enderror" name="MA_NamaLengkap" value="{{ old('MA_NamaLengkap') }}" required autocomplete="MA_NamaLengkap" autofocus>
 
-                                    @error('name')
+                                    @error('MA_NamaLengkap')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -29,9 +43,9 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Email') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="MA_Email" type="email" class="form-control @error('MA_Email') is-invalid @enderror" name="MA_Email" value="{{ old('MA_Email') }}" required autocomplete="MA_Email">
 
-                                    @error('email')
+                                    @error('MA_Email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -60,6 +74,8 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
+
+                            {{ Form::hidden('role', '10') }}
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
