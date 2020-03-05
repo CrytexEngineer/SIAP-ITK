@@ -29,9 +29,9 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
 
                                 <div class="col-md-6">
-                                    <input id="MA_NamaLengkap" type="text" class="form-control @error('MA_NamaLengkap') is-invalid @enderror" name="MA_NamaLengkap" value="{{ old('MA_NamaLengkap') }}" required autocomplete="MA_NamaLengkap" autofocus>
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                    @error('MA_NamaLengkap')
+                                    @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,9 +43,9 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Email') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="MA_Email" type="email" class="form-control @error('MA_Email') is-invalid @enderror" name="MA_Email" value="{{ old('MA_Email') }}" required autocomplete="MA_Email">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                    @error('MA_Email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
