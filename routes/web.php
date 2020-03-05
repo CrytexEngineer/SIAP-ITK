@@ -56,5 +56,5 @@ Route::resource('/register/pegawai', 'RegisterPegawaiController');
 Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
 Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
 
-Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController m@json');
+Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController@json');
 Route::get('/akunpegawai/json','ManajemenAkunPegawaiController@json');

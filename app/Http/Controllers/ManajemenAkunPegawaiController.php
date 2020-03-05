@@ -91,7 +91,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('email', $id)->with('roles')->get()->first();
+        $user = User::where('email', $id)->with('roles')->with('employee')->get()->first();
         $user->update($request->except(['_token', '_method']));
         $user->roles()->sync($user['role']);
 
