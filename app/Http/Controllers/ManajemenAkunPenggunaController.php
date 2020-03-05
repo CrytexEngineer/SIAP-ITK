@@ -96,7 +96,6 @@ class ManajemenAkunPenggunaController extends Controller
         Validator::make($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['req uired', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'integer']
         ]);
 
@@ -116,7 +115,7 @@ class ManajemenAkunPenggunaController extends Controller
         } else {
             $user->student['MA_NamaLengkap'] = $user['email'];
             $user->student['MA_Email'] = $user['email'];
-            $user->employee->save();
+            $user->student->save();
         }
 
 

@@ -1,26 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Employee;
 use App\User;
 use DataTables;
 use Illuminate\Http\Request;
-use App\ManajemenAkun;
+
 class ManajemenAkunPegawaiController extends Controller
 {
 
-    function json(){
+    function json()
+    {
         return Datatables::of(User::where('role', '<', 10)->get()->all())
             ->addColumn('action', function ($row) {
-            $action = '<a href="/akunpegawai/'.$row->email.'/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
-            $action .= \Form::open(['url'=>'akunpegawai/'.$row->email,'method'=>'delete', 'style'=>'float:right']);
-            $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
-            $action .= \Form::close();
-            return $action;
+                $action = '<a href="/akunpegawai/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                $action .= \Form::open(['url' => 'akunpegawai/' . $row->email, 'method' => 'delete', 'style' => 'float:right']);
+                $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
+                $action .= \Form::close();
+                return $action;
 
-        })
+            })
             ->make(true);
         //Khusus di pegawai harus query ke roles selain mahasiswa
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +48,7 @@ class ManajemenAkunPegawaiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -55,7 +59,7 @@ class ManajemenAkunPegawaiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -66,42 +70,54 @@ class ManajemenAkunPegawaiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
+
     {
         $data['users'] = User::where('email', $id)->first();
-        return view('manajemen_akun.edit_pegawai',$data);
-//        $user= User::find($id);
-//        return View::make("user/regprofile")->with($user);
+        return view('manajemen_akun.edit_pegawai', $data);
+
 
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $akunpegawai = User::where('email',$id);
-        $akunpegawai->update($request->except(['_token','_method']));
+        $user = User::where('email', $id)->with('roles')->get()->first();
+        $user->update($request->except(['_token', '_method']));
+        $user->roles()->sync($user['role']);
+
+        $user->employee->where('PE_Nip', $user->employee['PE_Nip'])->update(
+            [
+                'PE_Nama' => $user['name'],
+                'PE_NamaLengkap' => $user['name'],
+                'PE_Email' => $user['email']]
+    );
+
         return redirect('/akunpegawai')->with('status', 'Data Berhasil Diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $akunpegawai = User::where('email',$id);
-        $akunpegawai->delete();
+        $user = User::where('email', $id)->with('employee');
+        if ($user->delete()) {
+            $employee = Employee::where('PE_Email', $id);
+            $employee->delete();
+        }
         return redirect('/akunpegawai')->with('status_failed', 'Data Berhasil Dihapus');
     }
 }
