@@ -50,9 +50,9 @@ Route::get('/dosen', 'DosenController@index')->name('dosen')->middleware('dosen'
 Auth::routes();
 
 
-Route::post('/register/mahasiswa', 'RegisterMahasiswaController@register')->name('register/mahasiswa');;
+
 Route::get('/register/mahasiswa', 'RegisterMahasiswaController@showRegistrationForm')->name('register/mahasiswa');
-Route::resource('/register/pegawai', 'RegisterPegawaiController');
+Route::get('/register/pegawai', 'RegisterPegawaiController@showRegistrationForm');
 Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
 Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
 
