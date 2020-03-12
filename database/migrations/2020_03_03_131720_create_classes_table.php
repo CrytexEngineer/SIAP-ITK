@@ -15,7 +15,7 @@ class CreateClassesTable extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->bigInteger('KE_ID')->primary()->unsigned();
-            $table->bigInteger('KE_KR_MK_ID')->unsigned();
+            $table->string('KE_KR_MK_ID');
             $table->foreign('KE_KR_MK_ID')->references('MK_ID')->on('subjects')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('KE_Tahun');
             $table->integer('KE_IDSemester');

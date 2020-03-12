@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Employee;
 use App\Http\Middleware\Student;
 use App\User;
 use DataTables;
@@ -77,8 +76,6 @@ class ManajemenAkunMahasiswaController extends Controller
     {
         $data['users'] = User::where('email', $id)->first();
         return view('manajemen_akun.edit_mahasiswa', $data);
-//        $user= User::find($id);
-//        return View::make("user/regprofile")->with($user);
 
     }
 
@@ -92,14 +89,17 @@ class ManajemenAkunMahasiswaController extends Controller
     public function update(Request $request, $id)
     {
 
-        $user = User::where('email', $id)->first();
-        $user->update($request->except(['_token', '_method']));
+        $user = User::where('email', $id)->with('student')->get()->first();
+        if ($user != null) {
 
-        $user->student->where('MA_Nrp', $user->student['MA_Nrp'])->update(
-            [
-                'MA_NamaLengkap' => $user['name'],
-                'MA_Email' => $user['name'],]
-        );
+            $user->update($request->except(['_token', '_method']));
+            $user->student->where('MA_Nrp', $user->student['MA_Nrp'])->update(
+                [
+                    'MA_NamaLengkap' => $user['name'],
+                    'MA_Email' => $user['email'],]
+            );
+
+        }
         return redirect('/akunmahasiswa')->with('status', 'Data Berhasil Diubah');
     }
 
@@ -110,11 +110,13 @@ class ManajemenAkunMahasiswaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $user = User::where('email', $id)->with('employee');
-        if ($user->delete()) {
-            $student = Student::where('MA_Email ', $id);
-            $student->delete();
+    {  $user = User::where('email', $id)->with('student');
+        if ($user != null) {
+
+            if ($user->delete()) {
+                $student = \App\Student::where('MA_Email', $id);
+                $student->delete();
+            }
         }
         return redirect('/akunmahasiswa')->with('status_failed', 'Data Berhasil Dihapus');
     }

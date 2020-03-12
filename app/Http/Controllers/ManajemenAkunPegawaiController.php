@@ -92,6 +92,7 @@ class ManajemenAkunPegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::where('email', $id)->with('roles')->with('employee')->get()->first();
+        if ($user != null) {
         $user->update($request->except(['_token', '_method']));
         $user->roles()->sync($user['role']);
 
@@ -103,7 +104,7 @@ class ManajemenAkunPegawaiController extends Controller
     );
 
         return redirect('/akunpegawai')->with('status', 'Data Berhasil Diubah');
-    }
+    }}
 
     /**
      * Remove the specified resource from storage.
@@ -114,10 +115,11 @@ class ManajemenAkunPegawaiController extends Controller
     public function destroy($id)
     {
         $user = User::where('email', $id)->with('employee');
+        if ($user != null) {
         if ($user->delete()) {
             $employee = Employee::where('PE_Email', $id);
             $employee->delete();
-        }
+        }}
         return redirect('/akunpegawai')->with('status_failed', 'Data Berhasil Dihapus');
     }
 }

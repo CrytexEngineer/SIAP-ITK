@@ -49,12 +49,17 @@ Route::get('/dosen', 'DosenController@index')->name('dosen')->middleware('dosen'
 //Testing Routes
 Auth::routes();
 
-
-
 Route::get('/register/mahasiswa', 'RegisterMahasiswaController@showRegistrationForm')->name('register/mahasiswa');
 Route::get('/register/pegawai', 'RegisterPegawaiController@showRegistrationForm');
-Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
-Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
 
+Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
 Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController@json');
+
+Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
 Route::get('/akunpegawai/json','ManajemenAkunPegawaiController@json');
+
+Route::resource('/matakuliah', 'ManajemenMataKuliahController');
+Route::get('matakuliah/json','ManajemenMataKuliahController@json');
+
+
+
