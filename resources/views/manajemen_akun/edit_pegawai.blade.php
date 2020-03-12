@@ -8,7 +8,7 @@
                     <div class="card-header">@yield('title')</div>
 
                     <div class="card-body">
-                        {{Form::model($users, ['url'=>'akunpegawai/'.$users->email, 'method'=>'PUT'])}}
+                        {{Form::model($users, ['url'=>'manajemen_akun/pegawai/'.$users->email, 'method'=>'PUT'])}}
                         @csrf
 
                         <div class="form-group row">
