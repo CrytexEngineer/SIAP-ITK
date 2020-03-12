@@ -14,7 +14,7 @@ class ManajemenAkunMahasiswaController extends Controller
     {
         return Datatables::of(User::where('role', 10)->get()->all())
             ->addColumn('action', function ($row) {
-                $action = '<a href="/akunmahasiswa/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                $action = '<a href="/manajemen_akun/mahasiswa/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
                 $action .= \Form::open(['url' => 'akunmahasiswa/' . $row->email, 'method' => 'delete', 'style' => 'float:right']);
                 $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
                 $action .= \Form::close();
@@ -41,7 +41,7 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('manajemen_akun.create_mahasiswa');
     }
 
     /**
@@ -52,7 +52,11 @@ class ManajemenAkunMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+//        $akunmahasiswa = New User();
+//        $akunmahasiswa->create($request->all());
+//        return redirect('/manajemen_akun/mahasiswa');
+
     }
 
     /**

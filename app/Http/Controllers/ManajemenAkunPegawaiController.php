@@ -14,7 +14,7 @@ class ManajemenAkunPegawaiController extends Controller
     {
         return Datatables::of(User::where('role', '<', 10)->get()->all())
             ->addColumn('action', function ($row) {
-                $action = '<a href="/akunpegawai/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                $action = '<a href="/manajemen_akun/pegawai/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
                 $action .= \Form::open(['url' => 'akunpegawai/' . $row->email, 'method' => 'delete', 'style' => 'float:right']);
                 $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
                 $action .= \Form::close();
@@ -42,7 +42,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('manajemen_akun.create_pegawai');
     }
 
     /**
@@ -53,7 +53,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -103,8 +103,8 @@ class ManajemenAkunPegawaiController extends Controller
                 'PE_Email' => $user['email']]
     );
 
-        return redirect('/akunpegawai')->with('status', 'Data Berhasil Diubah');
-    }}
+        return redirect('manajemen_akun/pegawai')->with('status', 'Data Berhasil Diubah');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -119,8 +119,8 @@ class ManajemenAkunPegawaiController extends Controller
         if ($user->delete()) {
             $employee = Employee::where('PE_Email', $id);
             $employee->delete();
-        }}
-        return redirect('/akunpegawai')->with('status_failed', 'Data Berhasil Dihapus');
+        }
+        return redirect('/manajemen_akun/pegawai')->with('status_failed', 'Data Berhasil Dihapus');
     }
 }
 

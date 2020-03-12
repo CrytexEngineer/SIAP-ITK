@@ -19,8 +19,11 @@ Route::get('/', function () {
 
 
 
-Route::get('/akunmahasiswa/json','ManajemenAkunMahasiswaController@json');
-Route::get('/akunpegawai/json','ManajemenAkunPegawaiController@json');
+Route::get('/manajemen_akun/mahasiswa/json','ManajemenAkunMahasiswaController@json');
+Route::get('/manajemen_akun/pegawai/json','ManajemenAkunPegawaiController@json');
+Route::get('/kelas','KelasController@json');
+Route::get('/matakuliah','MatakuliahController@json');
+Route::get('/program_studi','ProgramStudiController@json');
 
 Route::get('/home','HomeController@index')->name('home')->middleware('home');
 
@@ -61,5 +64,13 @@ Route::get('/akunpegawai/json','ManajemenAkunPegawaiController@json');
 Route::resource('/matakuliah', 'ManajemenMataKuliahController');
 Route::get('matakuliah/json','ManajemenMataKuliahController@json');
 
+
+
+Route::resource('/register/pegawai', 'RegisterPegawaiController');
+Route::resource('/manajemen_akun/mahasiswa', 'ManajemenAkunMahasiswaController');
+Route::resource('/manajemen_akun/pegawai', 'ManajemenAkunPegawaiController');
+Route::resource('/kelas', 'KelasController');
+Route::resource('/matakuliah', 'MatakuliahController');
+Route::resource('/program_studi', 'ProgramStudiController');
 
 

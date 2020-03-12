@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title', 'Manajemen Akun Pegawai')
+@section('title','matakuliah')
 @section('content')
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">@yield('title')</div>
+                    <div class="card-header">Modul matakuliah</div>
 
                     <div class="card-body">
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -17,21 +17,20 @@
 
                         @if (session('status_failed'))
                             <div class="alert alert-danger" role="alert">
-                            {{ session('status_failed') }}
+                                {{ session('status_failed') }}
                             </div>
                         @endif
 
-                        <a href="/manajemen_akun/pegawai/create" class="btn btn-success">Input Data Baru</a>
+                        <a href="/manajemen_akun/mahasiswa/create" class="btn btn-success">Input Data Baru</a>
                         <hr>
 
                         <table class="table table-bordered" id="users-table">
                             <thead>
                             <tr>
-                                <th>Nama Lengkap</th>
-                                <th>E-mail</th>
-                                <th>Role</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
+                                <th>Kode Matakuliah</th>
+                                <th>Nama Matakuliah</th>
+                                <th>Tahun Kurikulum</th>
+                                <th>Kredit Kuliah</th>
                                 <th width="85">Action</th>
                             </tr>
                             </thead>
@@ -43,21 +42,20 @@
     </div>
 @endsection
 
+
 @push('scripts')
     <script>
-
-
         $(function() {
             $('#users-table').DataTable({
+                "scrollX": true,
                 processing: true,
                 serverSide: true,
-                ajax: '/manajemen_akun/pegawai/json',
+                ajax: '/matakuliah/json', //DIGANTI SESUAI CONTROLLER
                 columns: [
-                    { data: 'name', name: 'name' },
-                    { data: 'email', name: 'email' },
-                    { data: 'role', name: 'role' },
-                    { data: 'created_at', name: 'created_at' },
-                    { data: 'updated_at', name: 'updated_at' },
+                    { data: 'MK_ID', name: 'MK_ID' },
+                    { data: 'MK_Mata_Kuliah', name: 'MK_Mata_Kuliah' },
+                    { data: 'MK_ThnKurikulum', name: 'MK_ThnKurikulum' },
+                    { data: 'MK_KreditKuliah', name: 'MK_KreditKuliah' },
                     { data: 'action', name: 'action' }
                 ]
             });
