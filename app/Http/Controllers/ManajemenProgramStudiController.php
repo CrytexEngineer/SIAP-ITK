@@ -4,10 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Major;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Contracts\DataTable;
+use Yajra\DataTables\DataTables;
 
-class ManajemenPrograsStudiController extends Controller
+
+class ManajemenProgramStudiController extends Controller
 {
+
+    function json()
+    {
+        return DataTables::of(Major::all())
+            ->addColumn('action', function ($row) {
+                $action = '<a href="/program_studi/' . $row->PS_Kode_Prodi . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                $action .= \Form::open(['url' => 'program_studi/' . $row->PS_Kode_Prodi, 'method' => 'DELETE', 'style' => 'float:right']);
+                $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
+                $action .= \Form::close();
+                return $action;
+            })
+            ->make(true);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,16 +30,7 @@ class ManajemenPrograsStudiController extends Controller
      */
     public function index()
     {
-        return Datatable::of(Major::all()->get())
-            /**  ->addColumn('action', function ($row) {
-             * $action = '<a href="/akunpegawai/' . $row->email . '/edit" class="btn btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
-             * $action .= \Form::open(['url' => 'akunpegawai/' . $row->email, 'method' => 'delete', 'style' => 'float:right']);
-             * $action .= "<button type='submit' class='btn btn-danger btn-sm'>Hapus</button>";
-             * $action .= \Form::close();
-             * return $action;
-             *
-             * })**/
-            ->make(true);
+        return view('program_studi.index');
     }
 
     /**
@@ -34,7 +40,7 @@ class ManajemenPrograsStudiController extends Controller
      */
     public function create()
     {
-
+        return view('program_studi.create');
     }
 
     /**
@@ -45,15 +51,18 @@ class ManajemenPrograsStudiController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
-            'PS_Kode_Prodi' => 'required|unique:matakuliah|min:6',
+            'PS_Kode_Prodi' =>'required|unique:majors|min:5',
             'PS_Nama_Baru' => 'required|min:6',
 
         ]);
 
         $major = New Major();
         $major->create($request->all());
-        //  return redirect('/matakuliah')->with('status', 'Data Matakuliah Berhasil Disimpan');
+
+
+        return redirect('/program_studi')->with('status', 'Data Program Studi Berhasil Disimpan');
     }
 
     /**
@@ -76,7 +85,7 @@ class ManajemenPrograsStudiController extends Controller
     public function edit($id)
     {
         $data['major'] = Major::where('PS_Kode_Prodi', $id)->first();
-        //  return view('matakuliah.edit', $data);
+       return view('program_studi.edit', $data);
     }
 
     /**
@@ -88,14 +97,13 @@ class ManajemenPrograsStudiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'PS_Kode_Prodi' => 'required|unique:matakuliah|min:6',
             'PS_Nama_Baru' => 'required|min:6',
 
         ]);
 
         $major = Major::where('PS_Kode_Prodi', '=', $id);
         $major->update($request->except('_method', '_token'));
-        //return redirect('/matakuliah')->with('status','Data Matakuliah Berhasil Di Update');;
+        return redirect('/program_studi')->with('status','Data Program Studi Berhasil Di Update');;
     }
 
     /**
@@ -108,6 +116,6 @@ class ManajemenPrograsStudiController extends Controller
     {
         $major = Major::where('PS_Kode_Prodi', $id);
         $major->delete();
-        // return redirect('/matakuliah')->with('status','Data Matakuliah Berhasil Dihapus');;
+        return redirect('/program_studi')->with('status','Data Program Studi Berhasil Dihapus');;
     }
 }

@@ -18,7 +18,7 @@
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Kode matakuliah</label>
                             <div class="col-md-3">
-                                {{ Form::text('kode_mk',null,['class'=>'form-control','placeholder'=>'Kode matakuliah'])}}
+                                {{ Form::text('MK_ID',null,['class'=>'form-control','placeholder'=>'Kode matakuliah'])}}
                             </div>
                         </div>
 

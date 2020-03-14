@@ -8,16 +8,16 @@
                     <div class="card-header">Edit Data matakuliah</div>
 
                     <div class="card-body">
-                        @include('validation_error')
+{{--                        @include('validation_error')--}}
 
-                        {{ Form::model($matakuliah,['url'=>'matakuliah/'.$matakuliah->kode_mk,'method'=>'PUT'])}}
+                        {{ Form::model($subject,['url'=>'matakuliah/'.$subject->MK_ID,'method'=>'PUT'])}}
 
                         @csrf
 
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Kode matakuliah</label>
                             <div class="col-md-6">
-                                {{ Form::text('kode_mk',null,['class'=>'form-control','placeholder'=>'Kode matakuliah','readonly'=>''])}}
+                                {{ Form::text('MK_ID',null,['class'=>'form-control','placeholder'=>'Kode matakuliah','readonly'=>''])}}
                             </div>
                         </div>
 
