@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <a href="/manajemen_akun/mahasiswa/create" class="btn btn-success">Input Data Baru</a>
+                        <a href="/program_studi/create" class="btn btn-success">Input Data Baru</a>
                         <hr>
 
                         <table class="table table-bordered" id="users-table">
@@ -50,8 +50,8 @@
                 serverSide: true,
                 ajax: '/program_studi/json', //DIGANTI SESUAI CONTROLLER
                 columns: [
-                    { data: 'MK_ID', name: 'MK_ID' }, //SESUAIKAN DB
-                    { data: 'MK_Mata_Kuliah', name: 'MK_Mata_Kuliah' }, //SESUAIKAN DB
+                    { data: 'PS_Kode_Prodi', name: 'PS_Kode_Prodi' }, //SESUAIKAN DB
+                    { data: 'PS_Nama_Baru', name: 'PS_Nama_Baru' }, //SESUAIKAN DB
                     { data: 'action', name: 'action' }
                 ]
             });

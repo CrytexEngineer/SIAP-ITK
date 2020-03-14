@@ -53,15 +53,26 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        dd($data);
-
-        return Validator::make($data, [
+      $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'PE_Nip' => ['required', 'integer', 'unique:employees'],
             'role' => ['required', 'integer']
         ]);
+        if ($validator->fails()) {
+            return Validator::make($data, [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'MA_Nrp' => ['required', 'integer', 'unique:students'],
+                'role' => ['required', 'integer']
+            ]);
+        }
+
+
+        return $validator;
+
     }
 
     /**
@@ -72,11 +83,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         $user = [
             'name' => $data['name'],
             'email' => $data['email'],
-           'role' => $data['role'],
+            'role' => $data['role'],
             'password' => Hash::make($data['password']),
         ];
 
@@ -115,8 +125,8 @@ class RegisterController extends Controller
             return $user;
         }
         $student = new Student([
-            'MA_Nrp' => $data['PE_Nip'],
-            'MA_NRP_Baru' => $data['PE_Nip'],
+            'MA_Nrp' => $data['MA_Nrp'],
+            'MA_NRP_Baru' => $data['MA_Nrp'],
             'MA_NamaLengkap' => $data['name'],
             'MA_Email' => $data['email']
         ]);
@@ -128,7 +138,6 @@ class RegisterController extends Controller
         }
         return $user;
     }
-
 
 
 }

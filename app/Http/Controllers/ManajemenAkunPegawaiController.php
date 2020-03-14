@@ -53,7 +53,7 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
     }
 
     /**
@@ -91,17 +91,18 @@ class ManajemenAkunPegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('email', $id)->with('roles')->get()->first();
-        $user->update($request->except(['_token', '_method']));
-        $user->roles()->sync($user['role']);
+        $user = User::where('email', $id)->with('roles')->with('employee')->get()->first();
+        if ($user != null) {
+            $user->update($request->except(['_token', '_method']));
+            $user->roles()->sync($user['role']);
 
-        $user->employee->where('PE_Nip', $user->employee['PE_Nip'])->update(
-            [
-                'PE_Nama' => $user['name'],
-                'PE_NamaLengkap' => $user['name'],
-                'PE_Email' => $user['email']]
-    );
-
+            $user->employee->where('PE_Nip', $user->employee['PE_Nip'])->update(
+                [
+                    'PE_Nama' => $user['name'],
+                    'PE_NamaLengkap' => $user['name'],
+                    'PE_Email' => $user['email']]
+            );
+        }
         return redirect('manajemen_akun/pegawai')->with('status', 'Data Berhasil Diubah');
     }
 
@@ -114,9 +115,11 @@ class ManajemenAkunPegawaiController extends Controller
     public function destroy($id)
     {
         $user = User::where('email', $id)->with('employee');
-        if ($user->delete()) {
-            $employee = Employee::where('PE_Email', $id);
-            $employee->delete();
+        if ($user != null) {
+            if ($user->delete()) {
+                $employee = Employee::where('PE_Email', $id);
+                $employee->delete();
+            }
         }
         return redirect('/manajemen_akun/pegawai')->with('status_failed', 'Data Berhasil Dihapus');
     }
