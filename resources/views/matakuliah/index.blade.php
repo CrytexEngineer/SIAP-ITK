@@ -21,7 +21,14 @@
                             </div>
                         @endif
 
-                        <a href="/matakuliah" class="btn btn-success">Input Data Baru</a>
+                        <a href="/matakuliah/create" class="btn btn-success">Input Data Baru</a>
+
+                            <form action="{{ route('import_matakuliah') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="file" name="file" class="form-control">
+                                <br>
+                                {{ Form::submit('Import',['class'=>'btn btn-primary'])}}
+                            </form>
                         <hr>
 
                         <table class="table table-bordered" id="users-table">
