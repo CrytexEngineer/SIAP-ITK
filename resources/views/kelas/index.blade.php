@@ -41,19 +41,18 @@
                                 <div class="col-md-8" style="overflow-x:auto;">
                                     <table class="table table-bordered">
                                         <tr>
-                                            <th width="70">Kode Kelas</th>
-                                            <th width="100">Mata Kuliah</th>
+                                            <th width="40">Kode Kelas</th>
+                                            <th>Nama Kelas</th>
+                                            <th width="100">Kode Matakuliah</th>
                                             <th width="40">Tahun</th>
                                             <th width="40">Semester</th>
-                                            <th>Nama Kelas</th>
                                             <th>Daya Tampung</th>
+                                            <th>Jumlah Terisi</th>
                                             <th>NIP Pengajar</th>
-                                            <th>Terisi</th>
                                             <th>Hari</th>
                                             <th>Jam Mulai</th>
                                             <th>Jam Usai</th>
-                                            <th>Jadwal Ruangan</th>
-                                            <th>Kode Jurusan</th>
+                                            <th>Ruangan</th>
                                         </tr>
                                     </table>
                                 </div>
