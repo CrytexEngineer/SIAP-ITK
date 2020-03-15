@@ -62,10 +62,16 @@ Route::get('matakuliah/json', 'ManajemenMataKuliahController@json');
 
 
 Route::resource('/register/pegawai', 'RegisterPegawaiController');
+
 Route::resource('/manajemen_akun/mahasiswa', 'ManajemenAkunMahasiswaController');
 Route::resource('/manajemen_akun/pegawai', 'ManajemenAkunPegawaiController');
 Route::resource('/kelas', 'ManajemenKelasController');
 Route::resource('/matakuliah', 'ManajemenMatakuliahController');
 Route::resource('/program_studi', 'ManajemenProgramStudiController');
+
+//import routes
+route::get('/matakuliah/import', 'ManajemenMatakuliahController@importView')->name('import_matakuliah');
+Route::post('/matakuliah/import', 'ManajemenMatakuliahController@import')->name('import_matakuliah');
+
 
 
