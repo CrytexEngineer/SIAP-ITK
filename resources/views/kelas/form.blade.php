@@ -2,7 +2,6 @@
     <label class="col-md-2 col-form-label text-md-right">Jurusan</label>
     <div class="col-md-8">
         {{ Form::select('kode_jurusan',$jurusan,null,['class'=>'form-control'])}}
-        {{ Form::hidden('kode_tahun_akademik',$tahun_akademik->kode_tahun_akademik)}}
     </div>
 </div>
 
