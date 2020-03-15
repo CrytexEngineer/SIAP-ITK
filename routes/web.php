@@ -16,16 +16,13 @@ Route::get('/', function () {
 });
 
 
+Route::get('/manajemen_akun/mahasiswa/json', 'ManajemenAkunMahasiswaController@json');
+Route::get('/manajemen_akun/pegawai/json', 'ManajemenAkunPegawaiController@json');
+Route::get('/kelas', 'ManajemenKelasController@json');
+Route::get('/matakuliah/json', 'MatakuliahController@json');
+Route::get('/program_studi/json', 'ManajemenProgramStudiController@json');
 
-
-
-Route::get('/manajemen_akun/mahasiswa/json','ManajemenAkunMahasiswaController@json');
-Route::get('/manajemen_akun/pegawai/json','ManajemenAkunPegawaiController@json');
-Route::get('/kelas','KelasController@json');
-Route::get('/matakuliah','MatakuliahController@json');
-Route::get('/program_studi','ProgramStudiController@json');
-
-Route::get('/home','HomeController@index')->name('home')->middleware('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('home');
 
 Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin')->middleware('superadmin');
 Route::get('/superadmin/manajemen/akun_mahasiswa', 'DiksatController@index')->name('superadmin')->middleware('diksat');
@@ -48,18 +45,27 @@ Route::get('/diksat/manajemen/akun_mahasiswa', 'DiksatController@index')->name('
 Route::get('/dosen', 'DosenController@index')->name('dosen')->middleware('dosen');
 
 
-
 //Testing Routes
 Auth::routes();
 
-
-Route::post('/register/mahasiswa', 'RegisterMahasiswaController@register')->name('register/mahasiswa');;
 Route::get('/register/mahasiswa', 'RegisterMahasiswaController@showRegistrationForm')->name('register/mahasiswa');
+Route::get('/register/pegawai', 'RegisterPegawaiController@showRegistrationForm');
+
+Route::resource('/akunmahasiswa', 'ManajemenAkunMahasiswaController');
+Route::get('/akunmahasiswa/json', 'ManajemenAkunMahasiswaController@json');
+
+Route::resource('/akunpegawai', 'ManajemenAkunPegawaiController');
+Route::get('/akunpegawai/json', 'ManajemenAkunPegawaiController@json');
+
+Route::resource('/matakuliah', 'ManajemenMataKuliahController');
+Route::get('matakuliah/json', 'ManajemenMataKuliahController@json');
+
+
 Route::resource('/register/pegawai', 'RegisterPegawaiController');
 Route::resource('/manajemen_akun/mahasiswa', 'ManajemenAkunMahasiswaController');
 Route::resource('/manajemen_akun/pegawai', 'ManajemenAkunPegawaiController');
-Route::resource('/kelas', 'KelasController');
-Route::resource('/matakuliah', 'MatakuliahController');
-Route::resource('/program_studi', 'ProgramStudiController');
+Route::resource('/kelas', 'ManajemenKelasController');
+Route::resource('/matakuliah', 'ManajemenMatakuliahController');
+Route::resource('/program_studi', 'ManajemenProgramStudiController');
 
 

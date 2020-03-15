@@ -5,20 +5,20 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Input Data jurusan</div>
+                    <div class="card-header">Input Data Program Studi</div>
 
                     <div class="card-body">
 
-                        @include('validation_error')
+{{--                        @include('validation_error')--}}
 
                         {{ Form::open(['url'=>'program_studi'])}}
 
                         @csrf
 
                         <div class="form-group row">
-                            <label class="col-md-2 col-form-label text-md-right">Kode jurusan</label>
+                            <label class="col-md-2 col-form-label text-md-right">Kode Program Studi</label>
                             <div class="col-md-3">
-                                {{ Form::text('kode_mk',null,['class'=>'form-control','placeholder'=>'Kode program_studi'])}}
+                                {{ Form::text('PS_Kode_Prodi',null,['class'=>'form-control','placeholder'=>'Kode program studi'])}}
                             </div>
                         </div>
 
@@ -28,7 +28,7 @@
                             <div class="col-md-6 offset-md-2">
 
                                 {{ Form::submit('Simpan Data',['class'=>'btn btn-primary'])}}
-                                <a href="/jurusan" class="btn btn-primary">Kembali</a>
+                                <a href="/Program Studi" class="btn btn-primary">Kembali</a>
                             </div>
                         </div>
                         </form>
