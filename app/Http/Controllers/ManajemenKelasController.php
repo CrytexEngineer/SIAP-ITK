@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Major;
 
 class ManajemenKelasController extends Controller
 {
@@ -13,7 +14,8 @@ class ManajemenKelasController extends Controller
      */
     public function index()
     {
-        //
+        $data['major'] = Major::pluck('PS_Nama_Baru','PS_Kode_Prodi');
+        return view('kelas.index',$data);
     }
 
     /**
