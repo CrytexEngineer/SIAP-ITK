@@ -13,7 +13,7 @@
 </div>
 
 <div class="form-group row">
-    <label class="col-md-2 col-form-label text-md-right">Jumlah SKS</label>
+    <label class="col-md-2 col-form-label text-md-right">Tahun Kurikulum</label>
     <div class="col-md-2">
         {{ Form::text('MK_ThnKurikulum',null,['class'=>'form-control','placeholder'=>'Tahun Kurikulum'])}}
     </div>
